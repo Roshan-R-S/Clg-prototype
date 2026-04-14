@@ -1,0 +1,30 @@
+[
+  {
+    "id": "library",
+    "title": "The Knowledge Hub (Library)",
+    "description": "Our library houses over 50,000 volumes, digital archives, and quiet study zones. It's the heart of academic research at Anna Adarsh.",
+    "image": "https://picsum.photos/seed/library-tour/1200/800",
+    "features": ["Digital Resource Center", "Quiet Study Zones", "Periodical Section"]
+  },
+  {
+    "id": "labs",
+    "title": "Innovation Labs",
+    "description": "State-of-the-art computer and science labs equipped with the latest technology to foster practical learning and research.",
+    "image": "https://picsum.photos/seed/lab-tour/1200/800",
+    "features": ["High-speed Computing", "Advanced Biotech Lab", "Electronics Workshop"]
+  },
+  {
+    "id": "auditorium",
+    "title": "Main Auditorium",
+    "description": "A grand space with 1000+ seating capacity, hosting international conferences, cultural fests, and guest lectures.",
+    "image": "https://picsum.photos/seed/auditorium-tour/1200/800",
+    "features": ["Acoustic Design", "Modern AV Systems", "Backstage Facilities"]
+  },
+  {
+    "id": "sports",
+    "title": "Sports Complex",
+    "description": "Promoting physical well-being with professional-grade courts for basketball, volleyball, and a dedicated indoor sports arena.",
+    "image": "https://picsum.photos/seed/sports-tour/1200/800",
+    "features": ["Basketball Court", "Indoor Games Room", "Athletic Track"]
+  }
+]

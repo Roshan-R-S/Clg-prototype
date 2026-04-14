@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ba-eng",
+    "title": "B.A. English Literature",
+    "stream": "arts",
+    "duration": "3 Years",
+    "description": "Explore the world of literature, linguistics, and creative writing.",
+    "eligibility": "10+2 in any stream",
+    "career": "Content Writer, Editor, Journalist, Teacher",
+    "image": "https://picsum.photos/seed/literature/800/600"
+  },
+  {
+    "id": "bsc-psych",
+    "title": "B.Sc. Psychology",
+    "stream": "science",
+    "duration": "3 Years",
+    "description": "Study human behavior, mental processes, and psychological theories.",
+    "eligibility": "10+2 in any stream",
+    "career": "Counselor, Psychologist, HR Specialist",
+    "image": "https://picsum.photos/seed/psychology/800/600"
+  },
+  {
+    "id": "bba",
+    "title": "BBA (Bachelor of Business Administration)",
+    "stream": "commerce",
+    "duration": "3 Years",
+    "description": "Develop leadership and management skills for the corporate world.",
+    "eligibility": "10+2 in any stream",
+    "career": "HR Manager, Marketing Executive, Entrepreneur",
+    "image": "https://picsum.photos/seed/business/800/600"
+  },
+  {
+    "id": "bcom-gen",
+    "title": "B.Com (General)",
+    "stream": "commerce",
+    "duration": "3 Years",
+    "description": "A comprehensive course covering accounting, finance, and business management.",
+    "eligibility": "10+2 with Commerce/Accountancy",
+    "career": "Accountant, Financial Analyst, Bank Manager",
+    "image": "https://picsum.photos/seed/accounting/800/600"
+  },
+  {
+    "id": "bcom-af",
+    "title": "B.Com (Accounting & Finance)",
+    "stream": "commerce",
+    "duration": "3 Years",
+    "description": "Specialized study in financial accounting, auditing, and corporate finance.",
+    "eligibility": "10+2 with Commerce/Accountancy",
+    "career": "Chartered Accountant, Auditor, Investment Banker",
+    "image": "https://picsum.photos/seed/finance/800/600"
+  }
+]

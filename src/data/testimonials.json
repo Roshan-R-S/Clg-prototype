@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Priya Sharma",
+    "course": "B.Com Graduate (2023)",
+    "text": "Anna Adarsh provided me with the perfect platform to grow both academically and personally. The faculty is incredibly supportive.",
+    "image": "https://picsum.photos/seed/student1/200/200"
+  },
+  {
+    "id": 2,
+    "name": "Ananya Iyer",
+    "course": "B.Sc. CS Student",
+    "text": "The infrastructure and labs are world-class. I've learned so much through the hands-on projects and workshops.",
+    "image": "https://picsum.photos/seed/student2/200/200"
+  },
+  {
+    "id": 3,
+    "name": "Meera Krishnan",
+    "course": "B.A. English Alumna",
+    "text": "The cultural environment and the focus on women empowerment make this college truly unique.",
+    "image": "https://picsum.photos/seed/student3/200/200"
+  }
+]

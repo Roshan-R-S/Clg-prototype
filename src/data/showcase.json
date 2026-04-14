@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Preethi Srinivasan",
+    "role": "Distinguished Alumna",
+    "achievement": "Founder of Soulfree, National Swimming Champion",
+    "text": "Anna Adarsh was where my journey of resilience began. The support I received here shaped my perspective on leadership and service.",
+    "image": "https://picsum.photos/seed/alumna1/400/400",
+    "type": "alumni"
+  },
+  {
+    "id": 2,
+    "name": "Sowmya Ramakrishnan",
+    "role": "Class of 2018",
+    "achievement": "Senior Software Engineer at Google",
+    "text": "The technical foundation and the confidence I gained at Anna Adarsh were instrumental in my career at top tech firms.",
+    "image": "https://picsum.photos/seed/alumna2/400/400",
+    "type": "alumni"
+  },
+  {
+    "id": 3,
+    "name": "Roshni Khatri",
+    "role": "Final Year, B.Com",
+    "achievement": "University Rank Holder, Cultural Secretary",
+    "text": "Being part of the student council taught me more about management than any textbook ever could. It's a vibrant community!",
+    "image": "https://picsum.photos/seed/student4/400/400",
+    "type": "student"
+  },
+  {
+    "id": 4,
+    "name": "Meenakshi Sundaram",
+    "role": "Class of 2015",
+    "achievement": "Successful Entrepreneur, Founder of 'Eco-Chic'",
+    "text": "The entrepreneurship cell at college gave me the wings to start my own sustainable fashion brand right after graduation.",
+    "image": "https://picsum.photos/seed/alumna3/400/400",
+    "type": "alumni"
+  }
+]

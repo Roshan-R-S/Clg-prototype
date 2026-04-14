@@ -1,0 +1,16 @@
+{
+  "stats": [
+    { "label": "Placement Rate", "value": 95, "suffix": "%" },
+    { "label": "Top Salary", "value": 12, "suffix": " LPA" },
+    { "label": "Recruiters", "value": 150, "suffix": "+" },
+    { "label": "Alumnae", "value": 25000, "suffix": "+" }
+  ],
+  "recruiters": [
+    { "name": "TCS", "logo": "https://picsum.photos/seed/tcs/200/100" },
+    { "name": "Infosys", "logo": "https://picsum.photos/seed/infosys/200/100" },
+    { "name": "Wipro", "logo": "https://picsum.photos/seed/wipro/200/100" },
+    { "name": "Cognizant", "logo": "https://picsum.photos/seed/cts/200/100" },
+    { "name": "Accenture", "logo": "https://picsum.photos/seed/accenture/200/100" },
+    { "name": "HCL", "logo": "https://picsum.photos/seed/hcl/200/100" }
+  ]
+}
