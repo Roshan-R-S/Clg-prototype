@@ -1,7 +1,7 @@
-import { motion } from 'motion/react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import { Trophy, Briefcase, TrendingUp, Users } from 'lucide-react';
 import CountUp from 'react-countup';
-import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import placementData from '@/data/placements.json';
 import testimonialData from '@/data/testimonials.json';
@@ -15,7 +15,8 @@ const features = [
 ];
 
 export default function Placements() {
-  const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: true });
+  const statsRef = useRef(null);
+  const statsInView = useInView(statsRef, { once: true });
 
   return (
     <div className="min-h-screen pb-20">
@@ -67,10 +68,10 @@ function HistorySection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="bg-secondary border border-slate-100 space-y-4" padding="md">
               <h3 className="text-xl font-bold text-primary">Vision</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                To facilitate students to find a suitable career and to evolve the right attitude in a competitive
-                environment.
-              </p>
+              <p className="text-slate-600 leading-relaxed">
+              &quot;Anna Adarsh changed my perspective on what it means to be a professional. The training was
+              rigorous, but the support was unmatched.&quot;
+            </p>
             </Card>
             <Card className="bg-secondary border border-slate-100 space-y-4" padding="md">
               <h3 className="text-xl font-bold text-primary">Mission</h3>
@@ -96,25 +97,32 @@ function HistorySection() {
   );
 }
 
-function StatsSection({ statsRef, statsInView }: { statsRef: React.RefObject<HTMLDivElement>; statsInView: boolean }) {
+function StatsSection({ statsRef, statsInView }: { statsRef: React.RefObject<HTMLDivElement | null>; statsInView: boolean }) {
   return (
     <section ref={statsRef} className="py-20 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {placementData.stats.map((stat, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1 }}
-          >
-            <Card className="text-center space-y-2" padding="md">
-              <h3 className="text-4xl font-bold text-primary">
-                {statsInView && <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} />}
-              </h3>
-              <p className="text-xs text-slate-500 uppercase tracking-widest font-semibold">{stat.label}</p>
-            </Card>
-          </motion.div>
-        ))}
+          {testimonialData.map((testimonial, idx) => (
+            <React.Fragment key={testimonial.id}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <Card className="space-y-6 h-full" padding="lg">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full overflow-hidden">
+                      <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">{testimonial.name}</h4>
+                      <p className="text-sm text-slate-500">{testimonial.course}</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-600 italic">&quot;{testimonial.text}&quot;</p>
+                </Card>
+              </motion.div>
+            </React.Fragment>
+          ))}
       </div>
     </section>
   );

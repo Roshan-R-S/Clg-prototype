@@ -1,10 +1,11 @@
 import { cn } from '@/lib/utils';
-import type { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
-interface CardProps {
-  children: ReactNode;
-  className?: string;
+interface CardProps extends React.ComponentPropsWithoutRef<'div'> {
+  children?: ReactNode;
   hover?: boolean;
+  className?: string;
+  key?: React.Key;
   padding?: 'none' | 'sm' | 'md' | 'lg';
 }
 
@@ -15,7 +16,7 @@ const paddingStyles = {
   lg: 'p-12',
 };
 
-export function Card({ children, className, hover = false, padding = 'md' }: CardProps) {
+export function Card({ children, className, hover = false, padding = 'md', ...props }: CardProps) {
   return (
     <div
       className={cn(
@@ -24,6 +25,7 @@ export function Card({ children, className, hover = false, padding = 'md' }: Car
         paddingStyles[padding],
         className
       )}
+      {...props}
     >
       {children}
     </div>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { Building2, Laptop, Library, Coffee, ShieldCheck, Wifi } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -78,14 +79,16 @@ function FacilitiesGrid() {
     <section className="max-w-7xl mx-auto px-6 py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {facilities.map((facility, idx) => (
-          <FacilityCard key={idx} facility={facility} index={idx} />
+          <React.Fragment key={idx}>
+            <FacilityCard facility={facility} index={idx} />
+          </React.Fragment>
         ))}
       </div>
     </section>
   );
 }
 
-function FacilityCard({ facility, index }: { facility: Facility; index: number }) {
+function FacilityCard({ facility, index }: { facility: any; index: number }) {
   const Icon = facility.icon;
 
   return (

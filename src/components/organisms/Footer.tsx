@@ -7,16 +7,12 @@ export function Footer() {
     <footer className="bg-[#404144] text-white/80 pt-20 pb-10 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div className="space-y-6">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-serif font-bold text-2xl shadow-lg shadow-primary/20">
-              AA
-            </div>
-            <div>
-              <h1 className="text-xl leading-none font-bold tracking-tight text-white">
-                {COLLEGE_INFO.name}
-              </h1>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/50">College for Women</p>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/images/logo.png" 
+              alt="Anna Adarsh College for Women" 
+              className="h-14 w-auto object-contain brightness-0 invert" 
+            />
           </Link>
           <div className="space-y-2 text-sm">
             <p className="text-white font-bold">(AUTONOMOUS)</p>

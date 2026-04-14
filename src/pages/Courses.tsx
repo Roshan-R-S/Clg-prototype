@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, Clock, GraduationCap } from 'lucide-react';
@@ -11,7 +12,7 @@ export default function Courses() {
   const { stream, setStream } = useAppStore();
   const [search, setSearch] = useState('');
 
-  const filteredCourses = courseData.filter((course: Course) => {
+  const filteredCourses = (courseData as unknown as Course[]).filter((course: Course) => {
     const matchesStream = !stream || course.stream === stream;
     const matchesSearch =
       course.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -114,7 +115,7 @@ function CourseGrid({ courses, setStream, setSearch }: CourseGridProps) {
   );
 }
 
-function CourseCard({ course }: { course: Course }) {
+function CourseCard({ course }: { course: Course; key?: React.Key }) {
   return (
     <motion.div
       layout

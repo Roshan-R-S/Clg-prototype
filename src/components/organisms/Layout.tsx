@@ -55,9 +55,14 @@ export function Layout({ children }: LayoutProps) {
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white font-serif font-bold text-3xl shadow-2xl shadow-primary/20"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="h-24 w-auto flex items-center justify-center p-4 bg-white rounded-3xl shadow-2xl shadow-primary/20"
             >
-              AA
+              <img 
+                src="/images/logo.png" 
+                alt="Anna Adarsh logo" 
+                className="h-full w-auto object-contain" 
+              />
             </motion.div>
             <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
               <motion.div

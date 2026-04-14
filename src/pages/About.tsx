@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import React from 'react';
 import { Eye, Target, Award, Heart, Users, Sparkles } from 'lucide-react';
 import { Card, Badge } from '@/components/ui';
 import { CORE_VALUES } from '@/constants';

@@ -1,5 +1,5 @@
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { useRef } from 'react';
 import { MapPin, Info, ArrowDown, CheckCircle2 } from 'lucide-react';
 import tourData from '@/data/tour.json';
 import { cn } from '@/lib/utils';
@@ -75,8 +75,10 @@ export default function VirtualTour() {
       </section>
 
       <div className="relative z-20">
-        {tourData.map((section, idx) => (
-          <TourSection key={section.id} section={section} index={idx} />
+        {tourData.map((section: any, idx) => (
+          <React.Fragment key={section.id}>
+            <TourSection section={section} index={idx} />
+          </React.Fragment>
         ))}
       </div>
 
@@ -101,7 +103,7 @@ export default function VirtualTour() {
   );
 }
 
-function TourSection({ section, index }: { section: { id: string; title: string; description: string; image: string; features: string[] }; index: number }) {
+function TourSection({ section, index }: { section: any; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,

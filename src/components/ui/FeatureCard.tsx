@@ -1,21 +1,25 @@
 import { motion } from 'motion/react';
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import React from 'react';
 
-interface FeatureCardProps {
+interface FeatureCardProps extends React.ComponentPropsWithoutRef<'div'> {
   icon: LucideIcon;
   title: string;
   description: string;
   index: number;
+  className?: string;
+  key?: React.Key;
 }
 
-export function FeatureCard({ icon: Icon, title, description, index }: FeatureCardProps) {
+export function FeatureCard({ icon: Icon, title, description, index, className, ...props }: FeatureCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="p-12 rounded-[3rem] bg-white border border-slate-100 premium-shadow space-y-8 group hover:bg-primary transition-all duration-500"
+      className={cn("p-12 rounded-[3rem] bg-white border border-slate-100 premium-shadow space-y-8 group hover:bg-primary transition-all duration-500", className)}
+      {...props}
     >
       <div className="w-16 h-16 bg-primary/5 text-primary rounded-2xl flex items-center justify-center group-hover:bg-white/10 group-hover:text-white transition-colors">
         <Icon size={32} />

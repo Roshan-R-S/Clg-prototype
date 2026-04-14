@@ -1,10 +1,12 @@
 import { cn } from '@/lib/utils';
-import type { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
-interface BadgeProps {
-  children: ReactNode;
+interface BadgeProps extends React.ComponentPropsWithoutRef<'span'> {
+  children?: ReactNode;
   variant?: 'default' | 'primary' | 'accent';
   size?: 'sm' | 'md';
+  className?: string;
+  key?: React.Key;
 }
 
 const variantStyles = {
@@ -18,14 +20,16 @@ const sizeStyles = {
   md: 'px-4 py-2 text-xs',
 };
 
-export function Badge({ children, variant = 'default', size = 'sm' }: BadgeProps) {
+export function Badge({ children, variant = 'default', size = 'sm', className, ...props }: BadgeProps) {
   return (
     <span
       className={cn(
         'inline-flex items-center font-semibold uppercase tracking-widest rounded-full',
         variantStyles[variant],
-        sizeStyles[size]
+        sizeStyles[size],
+        className
       )}
+      {...props}
     >
       {children}
     </span>
