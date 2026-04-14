@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown, Sparkles } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { NAV_LINKS } from '@/constants';
 import { Button } from '@/components/ui';
+import { NAV_LINKS } from '@/constants';
+import { cn } from '@/lib/utils';
+import { ChevronDown, Menu, Sparkles, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ export function Navbar() {
     <nav
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
-        scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent'
+        scrolled ? 'bg-black/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
