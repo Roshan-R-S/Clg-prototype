@@ -69,7 +69,7 @@ function Hero() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="aspect-[4/3] rounded-[3rem] overflow-hidden border-4 border-slate-200 shadow-2xl">
+          <div className="aspect-[4/3] rounded-none overflow-hidden border-4 border-slate-200 shadow-2xl">
             <img
               src="https://picsum.photos/seed/punjab/800/600"
               alt="Punjab Association Legacy"
@@ -88,7 +88,7 @@ function AboutSection() {
     <section className="py-32 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div className="space-y-8">
-          <div className="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
+          <div className="w-16 h-16 bg-primary/10 text-primary rounded-none flex items-center justify-center">
             <History size={32} />
           </div>
           <h2 className="text-4xl font-bold tracking-tight">About the Association</h2>
@@ -183,7 +183,7 @@ function FoundersSection() {
           <motion.div key={idx} whileHover={{ y: -10 }}>
             <Card className="space-y-8" padding="lg">
               <div className="flex items-center gap-6">
-                <div className={`w-24 h-24 rounded-2xl overflow-hidden shadow-lg ${idx > 0 ? 'border-2 border-slate-100' : ''}`}>
+                <div className={`w-24 h-24 rounded-none overflow-hidden shadow-lg ${idx > 0 ? 'border-2 border-slate-100' : ''}`}>
                   <img src={founder.image} alt={founder.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div>

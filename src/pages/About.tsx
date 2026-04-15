@@ -39,7 +39,7 @@ function Hero() {
           </p>
         </div>
         <div className="relative">
-          <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
+          <div className="aspect-square rounded-none overflow-hidden shadow-2xl">
             <img
               src="https://picsum.photos/seed/legacy/800/800"
               alt="Legacy"
@@ -59,7 +59,7 @@ function VisionMission() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
         <motion.div whileHover={{ y: -10 }}>
           <Card className="bg-secondary border border-slate-100 space-y-6" padding="lg">
-            <div className="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-primary/10 text-primary rounded-none flex items-center justify-center">
               <Eye size={32} />
             </div>
             <h2 className="text-3xl font-bold">Our Vision</h2>
@@ -72,7 +72,7 @@ function VisionMission() {
 
         <motion.div whileHover={{ y: -10 }}>
           <Card className="border border-slate-100 shadow-sm space-y-6" padding="lg">
-            <div className="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-primary/10 text-primary rounded-none flex items-center justify-center">
               <Target size={32} />
             </div>
             <h2 className="text-3xl font-bold">Our Mission</h2>
@@ -101,7 +101,7 @@ function CoreValues() {
             const Icon = iconMap[value.icon];
             return (
               <div key={idx} className="text-center space-y-4">
-                <div className="w-20 h-20 bg-primary/5 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-20 h-20 bg-primary/5 text-primary rounded-none flex items-center justify-center mx-auto mb-6">
                   <Icon size={32} />
                 </div>
                 <h3 className="text-xl font-bold">{value.title}</h3>
@@ -129,7 +129,7 @@ function Leadership() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {leaders.map((leader, idx) => (
             <div key={idx} className="space-y-6 group">
-              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg group-hover:shadow-2xl transition-all">
+              <div className="aspect-[4/5] rounded-none overflow-hidden shadow-lg group-hover:shadow-2xl transition-all">
                 <img
                   src={leader.image}
                   alt={leader.name}

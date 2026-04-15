@@ -57,7 +57,7 @@ function Content() {
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
               <Eye size={200} />
             </div>
-            <div className="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-primary/10 text-primary rounded-none flex items-center justify-center">
               <Eye size={32} />
             </div>
             <h2 className="text-4xl font-bold tracking-tight">Our Vision</h2>
@@ -78,7 +78,7 @@ function Content() {
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
               <Target size={200} />
             </div>
-            <div className="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-primary/10 text-primary rounded-none flex items-center justify-center">
               <Target size={32} />
             </div>
             <h2 className="text-4xl font-bold tracking-tight">Our Mission</h2>

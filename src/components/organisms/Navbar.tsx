@@ -27,7 +27,7 @@ export function Navbar() {
     <nav
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
-        scrolled ? 'bg-black/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent'
+        scrolled ? 'bg-black/95 backdrop-blur-md shadow-lg py-3' : 'bg-black/80'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -35,7 +35,7 @@ export function Navbar() {
           <img 
             src="/images/logo.png" 
             alt="Anna Adarsh College for Women" 
-            className="h-12 w-auto object-contain" 
+            className="h-20 w-auto object-contain" 
           />
         </Link>
 
@@ -51,7 +51,7 @@ export function Navbar() {
                 <button
                   className={cn(
                     'text-[13px] font-semibold uppercase tracking-wider transition-all duration-300 flex items-center gap-1 py-1',
-                    location.pathname.startsWith(link.path) ? 'text-primary' : 'text-slate-600 hover:text-primary'
+                    location.pathname.startsWith(link.path) ? 'text-primary' : 'text-slate-300 hover:text-white'
                   )}
                 >
                   {link.name}
@@ -65,7 +65,7 @@ export function Navbar() {
                   to={link.path}
                   className={cn(
                     'text-[13px] font-semibold uppercase tracking-wider transition-all duration-300 nav-link-hover py-1',
-                    location.pathname === link.path ? 'text-primary after:w-full' : 'text-slate-600 hover:text-primary'
+                    location.pathname === link.path ? 'text-primary after:w-full' : 'text-slate-300 hover:text-white'
                   )}
                 >
                   {link.name}
@@ -79,7 +79,7 @@ export function Navbar() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 w-56 bg-white shadow-2xl rounded-2xl border border-slate-100 mt-2 py-3 overflow-hidden"
+                      className="absolute top-full left-0 w-56 bg-black/95 backdrop-blur-xl shadow-2xl rounded-none border border-white/10 mt-2 py-3 overflow-hidden"
                     >
                       {link.subLinks.map((sub) => (
                         <Link
@@ -88,8 +88,8 @@ export function Navbar() {
                           className={cn(
                             'block px-6 py-3 text-sm font-medium transition-colors',
                             location.pathname === sub.path
-                              ? 'bg-primary/5 text-primary'
-                              : 'text-slate-600 hover:bg-slate-50 hover:text-primary'
+                              ? 'bg-white/5 text-primary'
+                              : 'text-slate-300 hover:bg-white/5 hover:text-white'
                           )}
                         >
                           {sub.name}
@@ -102,13 +102,13 @@ export function Navbar() {
             </div>
           ))}
           <Link to="/admissions">
-            <Button size="sm">
+            <Button variant="white" size="sm">
               Apply Now
             </Button>
           </Link>
         </div>
 
-        <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden p-2 text-white" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
@@ -119,23 +119,23 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white border-t border-slate-100 p-6 flex flex-col gap-4 md:hidden shadow-xl max-h-[80vh] overflow-y-auto"
+            className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-t border-white/10 p-6 flex flex-col gap-4 md:hidden shadow-xl max-h-[80vh] overflow-y-auto"
           >
             {NAV_LINKS.map((link) => (
               <div key={link.path} className="space-y-2">
                 {link.subLinks ? (
                   <>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold px-1">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold px-1">
                       {link.name}
                     </p>
-                    <div className="flex flex-col gap-2 pl-4 border-l-2 border-slate-100">
+                    <div className="flex flex-col gap-2 pl-4 border-l-2 border-white/10">
                       {link.subLinks.map((sub) => (
                         <Link
                           key={sub.path}
                           to={sub.path}
                           className={cn(
-                            'text-lg font-serif font-medium',
-                            location.pathname === sub.path ? 'text-primary' : 'text-slate-600'
+                            'text-lg font-serif font-medium transition-colors',
+                            location.pathname === sub.path ? 'text-primary' : 'text-slate-300 hover:text-white'
                           )}
                         >
                           {sub.name}
@@ -147,8 +147,8 @@ export function Navbar() {
                   <Link
                     to={link.path}
                     className={cn(
-                      'text-lg font-serif font-medium',
-                      location.pathname === link.path ? 'text-primary' : 'text-slate-600'
+                      'text-lg font-serif font-medium transition-colors',
+                      location.pathname === link.path ? 'text-primary' : 'text-slate-300 hover:text-white'
                     )}
                   >
                     {link.name}
@@ -157,7 +157,7 @@ export function Navbar() {
               </div>
             ))}
             <Link to="/admissions" className="mt-4">
-              <Button className="w-full flex items-center justify-center gap-2">
+              <Button variant="white" className="w-full flex items-center justify-center gap-2">
                 <Sparkles className="w-4 h-4" />
                 Apply Now
               </Button>

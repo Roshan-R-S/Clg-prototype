@@ -110,7 +110,7 @@ function StatsSection({ statsRef, statsInView }: { statsRef: React.RefObject<HTM
               >
                 <Card className="space-y-6 h-full" padding="lg">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden">
+                    <div className="w-12 h-12 rounded-none overflow-hidden">
                       <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
                     </div>
                     <div>
@@ -163,7 +163,7 @@ function FeaturesSection() {
           <div className="space-y-6">
             {features.map((item, idx) => (
               <div key={idx} className="flex gap-6">
-                <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 bg-primary/10 text-primary rounded-none flex items-center justify-center shrink-0">
                   <item.icon size={24} />
                 </div>
                 <div className="space-y-1">
@@ -176,7 +176,7 @@ function FeaturesSection() {
         </div>
 
         <div className="relative">
-          <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
+          <div className="aspect-square rounded-none overflow-hidden shadow-2xl">
             <img
               src="https://picsum.photos/seed/placement/800/800"
               alt="Placement"
@@ -184,7 +184,7 @@ function FeaturesSection() {
               referrerPolicy="no-referrer"
             />
           </div>
-          <div className="absolute -top-10 -right-10 bg-primary text-white p-8 rounded-[2rem] shadow-xl max-w-[200px] rotate-6">
+          <div className="absolute -top-10 -right-10 bg-primary text-white p-8 rounded-none shadow-xl max-w-[200px] rotate-6">
             <p className="text-4xl font-bold">150+</p>
             <p className="text-xs font-semibold uppercase tracking-wider opacity-80">Companies Visited in 2025</p>
           </div>
@@ -211,7 +211,7 @@ function SuccessStories() {
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="w-12 h-12 rounded-full object-cover border border-slate-200"
+                  className="w-12 h-12 rounded-none object-cover border border-slate-200"
                   referrerPolicy="no-referrer"
                 />
                 <div>

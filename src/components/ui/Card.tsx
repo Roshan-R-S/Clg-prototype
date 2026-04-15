@@ -20,7 +20,7 @@ export function Card({ children, className, hover = false, padding = 'md', ...pr
   return (
     <div
       className={cn(
-        'bg-white rounded-[2rem] border border-slate-100 shadow-sm',
+        'bg-white rounded-none border border-slate-100 shadow-sm',
         hover && 'hover:shadow-xl transition-all duration-300',
         paddingStyles[padding],
         className

@@ -48,7 +48,7 @@ export function VoiceCall({ isOpen, onClose }: VoiceCallProps) {
             initial={{ scale: 0.9, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.9, y: 20 }}
-            className="bg-slate-800 w-full max-w-md rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 flex flex-col items-center p-12 space-y-12"
+            className="bg-slate-800 w-full max-w-md rounded-none overflow-hidden shadow-2xl border border-white/10 flex flex-col items-center p-12 space-y-12"
           >
             <div className="relative">
               <div className="w-32 h-32 bg-primary rounded-full flex items-center justify-center text-white relative z-10">
@@ -76,7 +76,7 @@ export function VoiceCall({ isOpen, onClose }: VoiceCallProps) {
             </div>
 
             {status === 'connected' && (
-              <div className="w-full bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
+              <div className="w-full bg-white/5 p-6 rounded-none border border-white/5 text-center">
                 <p className="text-primary font-bold text-sm animate-pulse">AI is listening...</p>
                 <p className="text-slate-400 text-xs mt-2 italic">
                   "Hello! I'm your AI counsellor. How can I help you with your admission today?"
@@ -85,16 +85,16 @@ export function VoiceCall({ isOpen, onClose }: VoiceCallProps) {
             )}
 
             <div className="flex gap-6">
-              <button className="w-14 h-14 bg-white/10 text-white rounded-full flex items-center justify-center hover:bg-white/20 transition-all">
+              <button className="w-14 h-14 bg-white/10 text-white rounded-none flex items-center justify-center hover:bg-white/20 transition-all">
                 <Mic size={24} />
               </button>
               <button
                 onClick={onClose}
-                className="w-14 h-14 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all shadow-xl shadow-red-500/20"
+                className="w-14 h-14 bg-red-500 text-white rounded-none flex items-center justify-center hover:bg-red-600 transition-all shadow-xl shadow-red-500/20"
               >
                 <PhoneOff size={24} />
               </button>
-              <button className="w-14 h-14 bg-white/10 text-white rounded-full flex items-center justify-center hover:bg-white/20 transition-all">
+              <button className="w-14 h-14 bg-white/10 text-white rounded-none flex items-center justify-center hover:bg-white/20 transition-all">
                 <Volume2 size={24} />
               </button>
             </div>

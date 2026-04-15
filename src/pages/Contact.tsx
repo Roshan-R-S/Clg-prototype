@@ -73,7 +73,7 @@ function ContactInfo() {
           const Icon = iconMap[item.icon];
           return (
             <div key={idx} className="space-y-4">
-              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-none flex items-center justify-center">
                 <Icon size={24} />
               </div>
               <h3 className="font-bold text-lg">{item.title}</h3>
@@ -83,7 +83,7 @@ function ContactInfo() {
         })}
       </div>
 
-      <div className="aspect-video rounded-[2rem] overflow-hidden border border-slate-200 shadow-lg grayscale hover:grayscale-0 transition-all">
+      <div className="aspect-video rounded-none overflow-hidden border border-slate-200 shadow-lg grayscale hover:grayscale-0 transition-all">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3886.262572535492!2d80.2134563148229!3d13.0826801907831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52642630000001%3A0x7000000000000000!2sAnna%20Adarsh%20College%20for%20Women!5e0!3m2!1sen!2sin!4v1649580000000!5m2!1sen!2sin"
           width="100%"

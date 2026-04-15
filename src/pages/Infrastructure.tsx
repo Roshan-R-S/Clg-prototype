@@ -98,7 +98,7 @@ function FacilityCard({ facility, index }: { facility: any; index: number }) {
       transition={{ delay: index * 0.1 }}
       className="group space-y-6"
     >
-      <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-lg group-hover:shadow-2xl transition-all">
+      <div className="aspect-[4/3] rounded-none overflow-hidden shadow-lg group-hover:shadow-2xl transition-all">
         <img
           src={facility.image}
           alt={facility.title}
@@ -130,16 +130,16 @@ function VirtualTourCTA() {
               </p>
               <Link
                 to="/virtual-tour"
-                className="inline-block bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
+                className="inline-block bg-primary text-white px-8 py-4 rounded-none font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
               >
                 Start Virtual Tour
               </Link>
             </div>
             <Link
               to="/virtual-tour"
-              className="w-full md:w-1/3 aspect-video bg-white rounded-2xl flex items-center justify-center border border-slate-200 group/play shadow-sm"
+              className="w-full md:w-1/3 aspect-video bg-white rounded-none flex items-center justify-center border border-slate-200 group/play shadow-sm"
             >
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-xl shadow-primary/20 group-hover/play:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-primary rounded-none flex items-center justify-center shadow-xl shadow-primary/20 group-hover/play:scale-110 transition-transform">
                 <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-white border-b-[10px] border-b-transparent ml-1" />
               </div>
             </Link>

@@ -75,7 +75,7 @@ function Hero() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="aspect-[4/3] rounded-[3rem] overflow-hidden border-4 border-slate-200 shadow-2xl">
+          <div className="aspect-[4/3] rounded-none overflow-hidden border-4 border-slate-200 shadow-2xl">
             <img
               src="https://picsum.photos/seed/counselling/800/600"
               alt="Counselling Centre"
@@ -94,7 +94,7 @@ function AboutSection() {
     <section className="py-32 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div className="space-y-8">
-          <div className="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
+          <div className="w-16 h-16 bg-primary/10 text-primary rounded-none flex items-center justify-center">
             <Brain size={32} />
           </div>
           <h2 className="text-4xl font-bold tracking-tight">A Model for Wellness</h2>
@@ -179,7 +179,7 @@ function TeamSection() {
             whileHover={{ y: -10 }}
           >
             <Card className="space-y-4" padding="md">
-              <div className="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
+              <div className="w-16 h-16 bg-primary/10 text-primary rounded-none flex items-center justify-center">
                 <Users size={28} />
               </div>
               <h3 className="text-xl font-bold">{member.name}</h3>
@@ -201,7 +201,7 @@ function ServicesSection() {
           <h2 className="text-4xl font-bold tracking-tight">Services Provided</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {services.map((service, idx) => (
-              <div key={idx} className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-sm">
+              <div key={idx} className="flex items-center gap-3 bg-white p-4 rounded-none shadow-sm">
                 <Sparkles className="text-primary" size={20} />
                 <span className="font-semibold text-slate-700">{service}</span>
               </div>
@@ -213,7 +213,7 @@ function ServicesSection() {
           <div className="space-y-4">
             {benefits.map((benefit, idx) => (
               <div key={idx} className="flex gap-4">
-                <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center shrink-0 mt-1">
+                <div className="w-6 h-6 bg-primary text-white rounded-none flex items-center justify-center shrink-0 mt-1">
                   <CheckCircle2 size={14} />
                 </div>
                 <p className="text-slate-600 font-medium">{benefit}</p>
@@ -253,7 +253,7 @@ function ContactSection() {
           </p>
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-white/20 rounded-none flex items-center justify-center">
                 <Phone size={24} />
               </div>
               <div>
@@ -262,7 +262,7 @@ function ContactSection() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-white/20 rounded-none flex items-center justify-center">
                 <Clock size={24} />
               </div>
               <div>
@@ -271,7 +271,7 @@ function ContactSection() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-white/20 rounded-none flex items-center justify-center">
                 <MessageCircle size={24} />
               </div>
               <div>
@@ -286,7 +286,7 @@ function ContactSection() {
           <p className="text-slate-600">
             Adarsh Student Counselling Centre, the nucleus of planning, is our headquarters at Anna Nagar.
           </p>
-          <div className="aspect-video rounded-3xl overflow-hidden bg-slate-100">
+          <div className="aspect-video rounded-none overflow-hidden bg-slate-100">
             <img src="https://picsum.photos/seed/location/600/400" alt="Location" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           </div>
         </Card>

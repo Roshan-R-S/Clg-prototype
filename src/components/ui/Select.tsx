@@ -20,7 +20,7 @@ export const Select = reactForwardRef<HTMLSelectElement, SelectProps>(
         <select
           ref={ref}
           className={cn(
-            'w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 outline-none appearance-none cursor-pointer',
+            'w-full bg-slate-50 border-none rounded-none px-4 py-3 text-sm focus:ring-2 outline-none appearance-none cursor-pointer',
             error ? 'ring-2 ring-red-500/20' : 'focus:ring-primary/20',
             className
           )}

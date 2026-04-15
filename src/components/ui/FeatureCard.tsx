@@ -18,10 +18,10 @@ export function FeatureCard({ icon: Icon, title, description, index, className, 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className={cn("p-12 rounded-[3rem] bg-white border border-slate-100 premium-shadow space-y-8 group hover:bg-primary transition-all duration-500", className)}
+      className={cn("p-12 rounded-none bg-white border border-slate-100 premium-shadow space-y-8 group hover:bg-primary transition-all duration-500", className)}
       {...props}
     >
-      <div className="w-16 h-16 bg-primary/5 text-primary rounded-2xl flex items-center justify-center group-hover:bg-white/10 group-hover:text-white transition-colors">
+      <div className="w-16 h-16 bg-primary/5 text-primary rounded-none flex items-center justify-center group-hover:bg-white/10 group-hover:text-white transition-colors">
         <Icon size={32} />
       </div>
       <div className="space-y-4">
@@ -59,7 +59,7 @@ export function IconButton({ icon: Icon, onClick, className, variant = 'primary'
     <button
       onClick={onClick}
       className={cn(
-        'rounded-full flex items-center justify-center transition-all',
+        'rounded-none flex items-center justify-center transition-all',
         variantStyles[variant],
         sizeStyles[size],
         className

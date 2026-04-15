@@ -23,7 +23,7 @@ export function Footer() {
               <a
                 key={social.name}
                 href={social.url}
-                className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                className="w-8 h-8 rounded-none bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
               >
                 {social.icon === 'Facebook' && <Facebook size={16} />}
                 {social.icon === 'Instagram' && <Instagram size={16} />}

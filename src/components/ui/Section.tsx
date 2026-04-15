@@ -37,7 +37,7 @@ export function SectionHeader({ badge, title, subtitle, centered = true }: Secti
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-widest"
+          className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-none text-[10px] font-semibold uppercase tracking-widest"
         >
           {badge}
         </motion.span>

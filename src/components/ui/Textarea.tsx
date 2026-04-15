@@ -19,7 +19,7 @@ export const Textarea = reactForwardRef<HTMLTextAreaElement, TextareaProps>(
         <textarea
           ref={ref}
           className={cn(
-            'w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 outline-none resize-none transition-all',
+            'w-full bg-slate-50 border-none rounded-none px-4 py-3 text-sm focus:ring-2 outline-none resize-none transition-all',
             error ? 'ring-2 ring-red-500/20' : 'focus:ring-primary/20',
             className
           )}

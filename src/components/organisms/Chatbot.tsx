@@ -27,6 +27,12 @@ export function Chatbot() {
     }
   }, [messages]);
 
+  useEffect(() => {
+    if (isChatOpen && scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [isChatOpen]);
+
   const handleSend = async (text: string) => {
     if (!text.trim()) return;
 
@@ -62,12 +68,13 @@ export function Chatbot() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="absolute bottom-20 right-0 w-[350px] sm:w-[400px] h-[600px] bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col overflow-hidden"
+            className="absolute bottom-20 right-0 w-[350px] sm:w-[400px] bg-white rounded-none shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col"
+            style={{ height: '80vh' }}
           >
-            <div className="bg-primary p-8 text-white">
-              <div className="flex justify-between items-start mb-4">
+            <div className="bg-primary p-6 text-white shrink-0">
+              <div className="flex justify-between items-start">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/10 rounded-none flex items-center justify-center">
                     <Sparkles className="text-accent" />
                   </div>
                   <div>
@@ -80,35 +87,39 @@ export function Chatbot() {
                     </div>
                   </div>
                 </div>
-                <button onClick={toggleChat} className="p-2 hover:bg-white/10 rounded-full transition-colors">
+                <button onClick={toggleChat} className="p-2 hover:bg-white/10 rounded-none transition-colors">
                   <X size={20} />
                 </button>
               </div>
             </div>
 
-            <div ref={scrollRef} className="flex-grow overflow-y-auto p-8 space-y-6 bg-slate-50/50">
+            <div 
+              ref={scrollRef} 
+              className="overflow-y-auto flex-1 p-6 space-y-4 bg-slate-50/50 overscroll-contain"
+              style={{ touchAction: 'pan-y' }}
+            >
               {messages.map((msg) => (
                 <div
                   key={msg.id}
                   className={cn(
-                    'flex items-start gap-4 max-w-[90%]',
+                    'flex items-start gap-3 max-w-[85%]',
                     msg.role === 'user' ? 'ml-auto flex-row-reverse' : ''
                   )}
                 >
                   <div
                     className={cn(
-                      'w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 shadow-sm',
+                      'w-8 h-8 rounded-none flex items-center justify-center shrink-0 shadow-sm',
                       msg.role === 'user' ? 'bg-white text-slate-400' : 'bg-primary text-white'
                     )}
                   >
-                    {msg.role === 'user' ? <User size={18} /> : <Bot size={18} />}
+                    {msg.role === 'user' ? <User size={16} /> : <Bot size={16} />}
                   </div>
                   <div
                     className={cn(
-                      'p-4 rounded-2xl text-sm leading-relaxed shadow-sm',
+                      'p-3 rounded-none text-sm leading-relaxed shadow-sm max-w-[calc(100%-48px)]',
                       msg.role === 'user'
-                        ? 'bg-primary text-white rounded-tr-none'
-                        : 'bg-white border border-slate-100 rounded-tl-none text-slate-700'
+                        ? 'bg-primary text-white'
+                        : 'bg-white border border-slate-100 text-slate-700'
                     )}
                   >
                     {msg.text.split('\n').map((line, i) => (
@@ -120,31 +131,31 @@ export function Chatbot() {
                 </div>
               ))}
               {isLoading && (
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0">
-                    <Bot size={18} />
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-none bg-primary text-white flex items-center justify-center shrink-0">
+                    <Bot size={16} />
                   </div>
-                  <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 rounded-tl-none flex items-center gap-3">
-                    <Loader2 size={16} className="animate-spin text-primary" />
+                  <div className="bg-white p-3 rounded-none shadow-sm border border-slate-100 flex items-center gap-2">
+                    <Loader2 size={14} className="animate-spin text-primary" />
                     <span className="text-xs text-slate-400 font-medium">Counsellor is typing...</span>
                   </div>
                 </div>
               )}
             </div>
 
-            <div className="p-4 bg-white border-t border-slate-100 space-y-3">
+            <div className="p-4 bg-white border-t border-slate-100 shrink-0">
               <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
                 {quickPrompts.map((prompt) => (
                   <button
                     key={prompt}
                     onClick={() => handleSend(prompt)}
-                    className="px-3 py-1.5 bg-slate-100 hover:bg-primary/10 hover:text-primary rounded-full text-xs font-medium whitespace-nowrap transition-colors"
+                    className="px-3 py-1.5 bg-slate-100 hover:bg-primary/10 hover:text-primary rounded-none text-xs font-medium whitespace-nowrap transition-colors"
                   >
                     {prompt}
                   </button>
                 ))}
               </div>
-              <div className="flex gap-3 bg-slate-100 p-2 rounded-2xl">
+              <div className="flex gap-3 bg-slate-100 p-2 rounded-none">
                 <input
                   type="text"
                   value={input}
@@ -156,7 +167,7 @@ export function Chatbot() {
                 <button
                   onClick={() => handleSend(input)}
                   disabled={isLoading || !input.trim()}
-                  className="bg-primary text-white p-3 rounded-xl hover:bg-primary/90 disabled:opacity-50 transition-all shadow-lg shadow-primary/20"
+                  className="bg-primary text-white p-3 rounded-none hover:bg-primary/90 disabled:opacity-50 transition-all shadow-lg shadow-primary/20"
                 >
                   <Send size={18} />
                 </button>
@@ -167,13 +178,13 @@ export function Chatbot() {
       </AnimatePresence>
 
       <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
         onClick={toggleChat}
-        className="w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center relative overflow-hidden group"
+        className="flex items-center gap-3 bg-primary text-white px-6 py-4 rounded-none shadow-2xl hover:bg-primary/90 transition-all"
       >
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
-        {isChatOpen ? <X className="relative z-10" /> : <MessageSquare className="relative z-10" />}
+        <MessageSquare size={20} />
+        <span className="font-semibold text-sm">Chat with us</span>
       </motion.button>
     </div>
   );

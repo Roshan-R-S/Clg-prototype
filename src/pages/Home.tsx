@@ -78,7 +78,7 @@ function HeroSection() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] relative z-10">
+          <div className="aspect-[4/5] rounded-none overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] relative z-10">
             <img
               src="https://picsum.photos/seed/academic-excellence/1000/1250"
               alt="Students"
@@ -91,7 +91,7 @@ function HeroSection() {
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="absolute -bottom-12 -left-12 glass-card p-10 rounded-[2.5rem] max-w-[240px] z-20"
+            className="absolute -bottom-12 -left-12 glass-card p-10 rounded-none max-w-[240px] z-20"
           >
             <p className="text-5xl font-bold text-primary leading-none mb-2">35+</p>
             <p className="text-[10px] text-slate-500 font-semibold uppercase tracking-[0.2em] leading-tight">
@@ -146,7 +146,7 @@ function PrincipalMessage() {
     <section className="py-32 px-6 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} className="relative">
-          <div className="aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl relative z-10">
+          <div className="aspect-[4/5] rounded-none overflow-hidden shadow-2xl relative z-10">
             <img
               src="https://picsum.photos/seed/principal-portrait/800/1000"
               alt="Dr. Shirline David"
@@ -227,7 +227,7 @@ function PartnershipSection() {
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <div
               key={i}
-              className="aspect-square bg-slate-50 rounded-3xl flex items-center justify-center p-8 grayscale hover:grayscale-0 transition-all duration-500 border border-slate-100"
+              className="aspect-square bg-slate-50 rounded-none flex items-center justify-center p-8 grayscale hover:grayscale-0 transition-all duration-500 border border-slate-100"
             >
               <img
                 src={`https://picsum.photos/seed/logo-${i}/200/200`}
@@ -262,7 +262,7 @@ function CoursesPreview() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {courseData.slice(0, 3).map((course) => (
             <Link key={course.id} to="/courses" className="group">
-              <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm group-hover:shadow-xl transition-all">
+              <div className="bg-white rounded-none overflow-hidden border border-slate-100 shadow-sm group-hover:shadow-xl transition-all">
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={course.image}
@@ -335,12 +335,12 @@ function AlumniSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className={`${person.highlighted ? 'bg-primary text-white shadow-2xl shadow-primary/20' : 'bg-secondary border border-slate-100'} p-10 rounded-[3rem] flex flex-col gap-8`}
+              className={`${person.highlighted ? 'bg-primary text-white shadow-2xl shadow-primary/20' : 'bg-secondary border border-slate-100'} p-10 rounded-none flex flex-col gap-8`}
             >
               <div className="flex items-center gap-4">
                 <img
                   src={person.image}
-                  className={`w-16 h-16 rounded-2xl object-cover border ${person.highlighted ? 'border-white/20' : 'border-slate-200'}`}
+                  className={`w-16 h-16 rounded-none object-cover border ${person.highlighted ? 'border-white/20' : 'border-slate-200'}`}
                   referrerPolicy="no-referrer"
                 />
                 <div className={person.highlighted ? 'text-white' : ''}>
@@ -369,7 +369,7 @@ function AlumniSection() {
 function CTASection() {
   return (
     <section className="py-20 px-6">
-      <div className="max-w-7xl mx-auto bg-primary rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto bg-primary rounded-none p-12 md:p-20 text-center text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
         <div className="relative z-10 space-y-8 max-w-2xl mx-auto">

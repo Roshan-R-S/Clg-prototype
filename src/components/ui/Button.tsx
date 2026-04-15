@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import React, { ReactNode } from 'react';
 
 interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'white';
   size?: 'sm' | 'md' | 'lg';
   children?: ReactNode;
   isLoading?: boolean;
@@ -20,6 +20,7 @@ const variantStyles = {
   secondary: 'bg-secondary text-slate-900 border border-slate-200 hover:bg-white',
   outline: 'bg-transparent border border-slate-200 text-slate-900 hover:bg-slate-50',
   ghost: 'bg-transparent text-slate-600 hover:bg-slate-100',
+  white: 'bg-white text-slate-900 hover:bg-slate-50 shadow-lg shadow-white/10',
 };
 
 const sizeStyles = {
@@ -42,7 +43,7 @@ export function Button({
   return (
     <button
       className={cn(
-        'rounded-full font-semibold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed',
+        'rounded-none font-semibold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed',
         variantStyles[variant],
         sizeStyles[size],
         className

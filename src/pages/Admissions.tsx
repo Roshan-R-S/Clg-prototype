@@ -99,7 +99,7 @@ function AdmissionProcess() {
               transition={{ delay: idx * 0.1 }}
               className="flex gap-6"
             >
-              <div className="w-12 h-12 bg-white shadow-sm border border-slate-100 rounded-2xl flex items-center justify-center text-primary shrink-0">
+              <div className="w-12 h-12 bg-white shadow-sm border border-slate-100 rounded-none flex items-center justify-center text-primary shrink-0">
                 <Icon size={24} />
               </div>
               <div className="space-y-2">
@@ -144,7 +144,7 @@ function ApplicationForm({ register, errors, isSubmitting, onSubmit }: Applicati
   return (
     <Card className="relative shadow-2xl shadow-slate-200/50" padding="lg">
       <div className="absolute -top-6 -right-6">
-        <Badge variant="accent" size="md" className="bg-accent text-white px-6 py-3 rounded-2xl shadow-xl rotate-6">
+        <Badge variant="accent" size="md" className="bg-accent text-white px-6 py-3 rounded-none shadow-xl rotate-6">
           Apply Now
         </Badge>
       </div>

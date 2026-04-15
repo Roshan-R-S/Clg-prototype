@@ -52,7 +52,7 @@ export default function VirtualTour() {
           style={{ opacity: heroOpacity, scale: heroScale, y: heroY }}
           className="text-center space-y-6 max-w-4xl"
         >
-          <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest border border-primary/30">
+          <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-none text-xs font-semibold uppercase tracking-widest border border-primary/30">
             <MapPin size={14} />
             Interactive Experience
           </div>
@@ -158,7 +158,7 @@ function TourSection({ section, index }: { section: any; index: number }) {
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
         <motion.div style={{ scale, opacity }} className="relative group">
-          <motion.div style={{ y: imgY }} className="aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/10">
+          <motion.div style={{ y: imgY }} className="aspect-[4/3] rounded-none overflow-hidden shadow-2xl border-4 border-white/10">
             <img
               src={section.image}
               alt={section.title}
@@ -170,9 +170,9 @@ function TourSection({ section, index }: { section: any; index: number }) {
             initial={{ x: 20, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-3xl shadow-xl flex items-center gap-4"
+            className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-none shadow-xl flex items-center gap-4"
           >
-            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-white/20 rounded-none flex items-center justify-center">
               <Info size={24} />
             </div>
             <div>
@@ -208,7 +208,7 @@ function TourSection({ section, index }: { section: any; index: number }) {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 + fIdx * 0.1 }}
-                className="flex items-center gap-3 bg-black/5 p-4 rounded-2xl border border-black/5"
+                className="flex items-center gap-3 bg-black/5 p-4 rounded-none border border-black/5"
               >
                 <CheckCircle2 className="text-primary shrink-0" size={20} />
                 <span className="text-sm font-medium">{feature}</span>
